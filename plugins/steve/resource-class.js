@@ -1337,7 +1337,7 @@ export default class Resource {
         const allOfResourceType = this.$rootGetters['cluster/all']( type );
 
         this.ownersByType[kind].forEach((resource, idx) => {
-          const resourceInstance = allOfResourceType.find(resource => resource?.metdata?.uid === resource.uid);
+          const resourceInstance = allOfResourceType.find(resource => resource?.metadata?.uid === resource.uid);
 
           if (resourceInstance) {
             owners.push(resourceInstance);
