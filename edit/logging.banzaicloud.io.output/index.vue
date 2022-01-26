@@ -78,7 +78,7 @@ export default {
       initialBufferYaml:           bufferYaml,
       providers,
       selectedProvider,
-      hasMultipleProvdersSelected: selectedProviders.length > 1,
+      hasMultipleProvidersSelected: selectedProviders.length > 1,
       selectedProviders,
       LOGGING
     };
