@@ -42,8 +42,8 @@ export async function dashboardExists(dispatch, clusterId, embedUrl, store = 'cl
   }
 }
 
-export async function allDashboardsExist(dispatch, clusterId, embededUrls, store = 'cluster') {
-  const existPromises = embededUrls.map(url => dashboardExists(dispatch, clusterId, url, store));
+export async function allDashboardsExist(dispatch, clusterId, embeddedUrls, store = 'cluster') {
+  const existPromises = embeddedUrls.map(url => dashboardExists(dispatch, clusterId, url, store));
 
   return (await Promise.all(existPromises)).every(exists => exists);
 }
