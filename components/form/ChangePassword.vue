@@ -41,7 +41,7 @@ export default {
     return {
       username:                    '',
       errorMessages:               [],
-      pCanShowMissmatchedPassword: false,
+      pCanShowMismatchedPassword: false,
       pIsRandomGenerated:            false,
       form:                        {
         deleteKeys:        false,
@@ -125,11 +125,11 @@ export default {
 
     passwordConfirmBlurred: {
       get() {
-        return this.pCanShowMissmatchedPassword;
+        return this.pCanShowMismatchedPassword;
       },
 
       set(p) {
-        this.pCanShowMissmatchedPassword = p;
+        this.pCanShowMismatchedPassword = p;
         this.validate();
       }
     },
