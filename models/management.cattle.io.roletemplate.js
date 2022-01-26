@@ -185,7 +185,7 @@ const RESOURCES = [
   'ProjectMonitorGraphs',
   'ProjectNetworkPolicies',
   'ProjectRoleTemplateBindings',
-  'Prometheuses',
+  'Prometheis',
   'PrometheusRules',
   'QuotaSpecs',
   'QuotaSpecBindings',
