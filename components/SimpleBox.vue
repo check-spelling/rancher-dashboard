@@ -17,9 +17,9 @@ export default {
   },
 
   methods: {
-    closeBox(evnt) {
+    closeBox(event) {
       this.hide();
-      this.$emit('close', evnt);
+      this.$emit('close', event);
     }
   }
 };
