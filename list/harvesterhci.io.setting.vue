@@ -15,7 +15,7 @@ export default {
     const isDev = this.$store.getters['prefs/get'](DEV);
     const isSingleVirtualCluster = this.$store.getters['isSingleVirtualCluster'];
 
-    const hash = { haversterSettings: this.$store.dispatch('harvester/findAll', { type: HCI.SETTING }) };
+    const hash = { harvesterSettings: this.$store.dispatch('harvester/findAll', { type: HCI.SETTING }) };
 
     if (isSingleVirtualCluster) {
       hash.settings = this.$store.dispatch('management/findAll', { type: MANAGEMENT.SETTING });
@@ -30,9 +30,9 @@ export default {
     let allRows = [];
 
     if (rows.clusterNetwork) {
-      allRows = [...rows.clusterNetwork, ...rows.haversterSettings];
+      allRows = [...rows.clusterNetwork, ...rows.harvesterSettings];
     } else {
-      allRows = rows.haversterSettings;
+      allRows = rows.harvesterSettings;
     }
 
     if (isSingleVirtualCluster) {
@@ -122,7 +122,7 @@ export default {
       return HCI_ALLOWED_SETTINGS.find(setting => setting.id === id);
     },
 
-    toogleHide(s) {
+    toggleHide(s) {
       this.initSettings.find((setting) => {
         if (setting.id === s.id) {
           setting.hide = !setting.hide;
@@ -161,7 +161,7 @@ export default {
       </div>
       <div value>
         <div v-if="setting.hide">
-          <button class="btn btn-sm role-primary" @click="toogleHide(setting)">
+          <button class="btn btn-sm role-primary" @click="toggleHide(setting)">
             {{ t('advancedSettings.show') }} {{ setting.id }}
           </button>
         </div>
@@ -174,7 +174,7 @@ export default {
           <pre v-else class="text-muted">&lt;{{ t('advancedSettings.none') }}&gt;</pre>
         </div>
         <div v-if="setting.canHide && !setting.hide" class="mt-5">
-          <button class="btn btn-sm role-primary" @click="toogleHide(setting)">
+          <button class="btn btn-sm role-primary" @click="toggleHide(setting)">
             {{ t('advancedSettings.hide') }} {{ setting.id }}
           </button>
         </div>
